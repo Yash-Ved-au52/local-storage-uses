@@ -1,0 +1,144 @@
+/* Reset default styles */
+body, h1, textarea, button, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+    background-size: 300% 300%;
+    animation: darkGradientAnimation 8s infinite ease-in-out;
+    margin: 0;
+}
+
+/* Keyframes for darker gradient animation */
+@keyframes darkGradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* App Container */
+.container {
+    background: rgba(34, 34, 34, 0.9);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* Title */
+.container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #f8f9fa;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Textarea */
+textarea {
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background: #2d2d2d;
+    color: #fff;
+    resize: none;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 15px;
+}
+
+textarea:focus {
+    border-color: #4ecca3;
+    box-shadow: 0 0 10px rgba(78, 204, 163, 0.7);
+}
+
+/* Add Note Button */
+button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #4ecca3, #0f3460);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(78, 204, 163, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0f3460, #4ecca3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(78, 204, 163, 0.5);
+}
+
+/* Notes Container */
+#notesContainer {
+    margin-top: 20px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Individual Notes */
+.note {
+    background: linear-gradient(135deg, #394867, #212a3e);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    color: #f8f9fa;
+    transition: all 0.3s ease-in-out;
+}
+
+.note:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Delete Button */
+.delete-btn {
+    background: linear-gradient(135deg, #f05454, #d72323);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #d72323, #f05454);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(240, 84, 84, 0.5);
+}
