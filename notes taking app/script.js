@@ -3,13 +3,13 @@ const addNoteBtn = document.getElementById("addNoteBtn");
 const notesContainer = document.getElementById("notesContainer");
 
 // Load notes from local storage
-function loadNotes() {
+function loadNotes(){
   const notes = JSON.parse(localStorage.getItem("notes")) || [];
   notes.forEach(note => addNoteToDOM(note));
 }
 
 // Add note to DOM
-function addNoteToDOM(noteText) {
+function addNoteToDOM(noteText){
   const note = document.createElement("div");
   note.classList.add("note");
   note.innerHTML = `
@@ -23,9 +23,10 @@ function addNoteToDOM(noteText) {
 }
 
 // Add note to local storage
-function addNote() {
+function addNote(){
   const noteText = noteInput.value.trim();
-  if (noteText) {
+  if(noteText)
+  {
     const notes = JSON.parse(localStorage.getItem("notes")) || [];
     notes.push(noteText);
     localStorage.setItem("notes", JSON.stringify(notes));
@@ -37,7 +38,7 @@ function addNote() {
 }
 
 // Delete note
-function deleteNote(noteElement) {
+function deleteNote(noteElement){
   const noteText = noteElement.querySelector("p").textContent;
   let notes = JSON.parse(localStorage.getItem("notes")) || [];
   notes = notes.filter(note => note !== noteText);
